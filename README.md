@@ -34,7 +34,18 @@ redis-session/
 ```bash
 # 모든 패키지 의존성 설치
 pnpm install
+
+# 환경 변수 설정 (선택사항)
+cp packages/redis-session-be/.env.example packages/redis-session-be/.env
+cp packages/redis-session-fe/.env.example packages/redis-session-fe/.env
 ```
+
+### 포트 설정
+
+- **프론트엔드**: http://localhost:3000
+- **백엔드**: http://localhost:3001
+
+포트를 변경하려면 `.env` 파일을 수정하세요.
 
 ### 개발 모드
 
@@ -102,16 +113,18 @@ pnpm clean
 NestJS 기반의 백엔드 API 서버입니다.
 
 - **위치**: `packages/redis-session-be`
-- **포트**: 3000 (기본값)
-- **기술 스택**: NestJS, TypeScript
+- **포트**: 3001 (기본값)
+- **URL**: http://localhost:3001
+- **기술 스택**: NestJS, TypeScript, Redis
 
 ### redis-session-fe
 
 Next.js 기반의 프론트엔드 애플리케이션입니다.
 
 - **위치**: `packages/redis-session-fe`
-- **포트**: 3001 (또는 Next.js 기본 포트)
-- **기술 스택**: Next.js, React, TypeScript, Tailwind CSS
+- **포트**: 3000 (Next.js 기본 포트)
+- **URL**: http://localhost:3000
+- **기술 스택**: Next.js, React, TypeScript, Tailwind CSS, Redis
 
 ## Turborepo 명령어
 
